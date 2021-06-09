@@ -7,7 +7,4 @@ public class Ex2 {
         }
         return s;
     }
-    public static void main(String args[]){
-        System.out.println(sum(123456789));
-    }
 }
