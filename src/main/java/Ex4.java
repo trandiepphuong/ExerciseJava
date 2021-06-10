@@ -1,5 +1,5 @@
 public class Ex4 {
-    public  int fibonacci(int n) {
+    public int fibonacci(int n) {
         if (n == 0 || n == 1) {
             return n;
         } else {
@@ -7,11 +7,11 @@ public class Ex4 {
         }
     }
 
-    public  String main(int n) {
-        String s = "";
+    public String printFibonacci(int n) {
+        String result = "";
         for (int i = 0; i < n; i++) {
-            s+=fibonacci(i);
+            result += fibonacci(i);
         }
-        return  s;
+        return result;
     }
 }
