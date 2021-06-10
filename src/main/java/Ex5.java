@@ -8,7 +8,7 @@ public class Ex5 {
                 return "x = " + (-c / b);
             }
         }
-        if (a != 0) {
+        else {
             float delta = b * b - 4 * a * c;
             if (delta > 0) {
                 float x1;
