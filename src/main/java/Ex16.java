@@ -9,10 +9,11 @@ public class Ex16 {
             return fibonacci(n - 1) + fibonacci(n - 2);
         }
     }
+
     public int demFibo(int n) {
         List<Integer> listFibo = new ArrayList<Integer>();
         for (int i = 0; i < n; i++) {
-            if (fibonacci(i)>n) break;
+            if (fibonacci(i) > n) break;
             else listFibo.add(fibonacci(i));
         }
         return listFibo.size();
