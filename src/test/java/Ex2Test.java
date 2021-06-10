@@ -6,7 +6,6 @@ public class Ex2Test {
 
     @Test
     public void test() {
-        Ex2 ex2 = new Ex2();
         assertEquals(new Ex2().sum(1), 1);
         assertEquals(new Ex2().sum(100), 1);
         assertEquals(new Ex2().sum(0), 0);
