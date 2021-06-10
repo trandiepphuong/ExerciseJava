@@ -20,22 +20,12 @@ public class Ex14 {
         else
             return false;
     }
-    public String listArmstrong(){
+
+    public String listArmstrong() {
         String result = "";
-        for (int i=10;i<=99999;i++){
-            if (armstrong(i)) result+=i+", ";
+        for (int i = 10; i <= 99999; i++) {
+            if (armstrong(i)) result += i + ", ";
         }
         return result;
     }
 }
-
-//153,
-//        370,
-//        371,
-//        407,
-//        1634,
-//        8208,
-//        9474,
-//        54748,
-//        92727,
-//        93084,
