@@ -7,7 +7,7 @@ public class Ex3 {
         while (n > 1) {
             if (n % i == 0) {
                 n = n / i;
-                result+=i;
+                result=String.join("",result,String.valueOf(i));
             } else {
                 i++;
             }
