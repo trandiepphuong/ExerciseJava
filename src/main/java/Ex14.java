@@ -22,7 +22,7 @@ public class Ex14 {
             p /= 10;
         }
         if (sum == q)
-            return sum == q;
+            return true;
         else
             return false;
     }
