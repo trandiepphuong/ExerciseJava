@@ -1,29 +1,23 @@
 public class Ex5 {
-    public String giaiPTBac2(float a, float b, float c) {
-        String result = "";
+    public String giaiPTBac2(double a, double b, double c) {
         if (a == 0) {
             if (b == 0) {
                 return "VN";
             } else {
                 return "x = " + (-c / b);
             }
-        }
-        else {
-            float delta = b * b - 4 * a * c;
+        } else {
+            double delta = b * b - 4 * a * c;
             if (delta > 0) {
-                float x1;
-                float x2;
-                x1 = (float) ((-b + Math.sqrt(delta)) / (2 * a));
-                x2 = (float) ((-b - Math.sqrt(delta)) / (2 * a));
-                result += ("x1 = " + x1 + ", x2 = " + x2);
+                double x1 = (float) ((-b + Math.sqrt(delta)) / (2 * a));
+                double x2 = (float) ((-b - Math.sqrt(delta)) / (2 * a));
+                return ("x1 = " + x1 + ", x2 = " + x2);
             } else if (delta == 0) {
-                float x;
-                x = -b / (2 * a);
-                result += "x1 = x2 = " + x;
+                double x = -b / (2 * a);
+                return "x1 = x2 = " + x;
             } else {
-                result += "VN";
+                return "VN";
             }
         }
-        return result;
     }
 }
