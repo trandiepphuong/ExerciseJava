@@ -1,22 +1,28 @@
 import java.util.*;
 
 public class Ex14 {
-    public boolean armstrong(int n) {
-        int S = 0;
+    public int demSoChuSo(int n) {
         int m = 0;
-        int p = n;
-        int q = n;
         while (n > 0) {
             n = n / 10;
             m++;
         }
-        for (int l = 1; l <= m; l++) {
+        return m;
+    }
+
+    public boolean checkArmstrong(int n) {
+        int sum = 0;
+        int m = demSoChuSo(n);
+        int p = n;
+        int q = n;
+
+        for (int i = 1; i <= m; i++) {
             int z = p % 10;
-            p = p / 10;
-            S += Math.pow(z, m);
+            sum += Math.pow(z, m);
+            p /= 10;
         }
-        if (S == q)
-            return true;
+        if (sum == q)
+            return sum == q;
         else
             return false;
     }
@@ -24,8 +30,10 @@ public class Ex14 {
     public String listArmstrong() {
         String result = "";
         for (int i = 10; i <= 99999; i++) {
-            if (armstrong(i)) result += i + ", ";
+            if (checkArmstrong(i)) {
+                result = String.join(",", result, String.valueOf(i));
+            }
         }
-        return result;
+        return result.substring(1, result.length());
     }
 }
