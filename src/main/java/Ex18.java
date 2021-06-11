@@ -32,7 +32,7 @@ public class Ex18 {
         for (int i = roman.length() - 1; i > 0; i--) {
             if (a[i] > a[i - 1])
                 k = k - a[i - 1];
-            else if (a[i] == a[i - 1] || a[i] < a[i - 1])
+            else
                 k = k + a[i - 1];
         }
         return k;
