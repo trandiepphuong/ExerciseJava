@@ -1,5 +1,5 @@
 public class Ex12 {
-    double PRECISE = 0.0001;
+    public static final double PRECISE = 0.0001;
 
     public double canbac2(int a) {
         double fn = a;
