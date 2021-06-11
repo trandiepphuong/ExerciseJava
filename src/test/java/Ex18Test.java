@@ -13,5 +13,8 @@ public class Ex18Test {
         assertEquals(new Ex18().covertToDecimal("MMMCMXCIX "), 3999);
         assertEquals(new Ex18().covertToDecimal("I"), 1);
         assertEquals(new Ex18().covertToDecimal("II"), 2);
+        assertEquals(new Ex18().covertToDecimal("IV"), 4);
+        assertEquals(new Ex18().covertToDecimal("VI"), 5);
+
     }
 }
