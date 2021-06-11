@@ -1,12 +1,18 @@
 public class Ex8 {
-    double E = 0.0001;
+    public static final double E = 0.0001;
+
     public double pi() {
-        double s = 1;
-        double i = 1;
-        while (1.0 / (2 * i + 1) > E) {
-            s = s + Math.pow(-1, i) / (2 * i + 1);
-            i++;
+        double sum = 0;
+        double e = 1; // sai so e = 1/(2n + 1)
+        int n = 1;
+        while (e >= E) {
+            e = (double) 4 / (2 * n - 1);
+            if (n % 2 == 0)
+                sum = sum - e;
+            else
+                sum = sum + e;
+            n++;
         }
-        return s * 4;
+        return sum;
     }
 }
