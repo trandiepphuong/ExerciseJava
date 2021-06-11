@@ -2,20 +2,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ex16 {
-    public int fibonacci(int n) {
-        if (n == 0 || n == 1) {
+    public static int fibonacci(int n) {
+        int f0 = 0;
+        int f1 = 1;
+        int fn = 1;
+
+        if (n < 0) {
+            return -1;
+        } else if (n == 0 || n == 1) {
             return n;
         } else {
-            return fibonacci(n - 1) + fibonacci(n - 2);
+            for (int i = 2; i < n; i++) {
+                f0 = f1;
+                f1 = fn;
+                fn = f0 + f1;
+            }
         }
+        return fn;
     }
 
     public int demFibo(int n) {
-        List<Integer> listFibo = new ArrayList<Integer>();
+        int count = 0;
         for (int i = 0; i < n; i++) {
-            if (fibonacci(i) > n) break;
-            else listFibo.add(fibonacci(i));
+            if (fibonacci(i) > n) {
+                break;
+            } else count++;
         }
-        return listFibo.size();
+        return count;
     }
 }
