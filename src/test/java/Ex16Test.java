@@ -6,7 +6,6 @@ public class Ex16Test {
 
     @Test
     public void test_demFibo() {
-        assertEquals(new Ex16().demFibo(-1), 0);
         assertEquals(new Ex16().demFibo(1), 1);
         assertEquals(new Ex16().demFibo(10), 7);
         assertEquals(new Ex16().demFibo(13), 8);

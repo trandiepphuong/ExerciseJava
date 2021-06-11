@@ -7,9 +7,7 @@ public class Ex16 {
         int f1 = 1;
         int fn = 1;
 
-        if (n < 0) {
-            return -1;
-        } else if (n == 0 || n == 1) {
+        if (n == 0 || n == 1) {
             return n;
         } else {
             for (int i = 2; i < n; i++) {
