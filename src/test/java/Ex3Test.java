@@ -6,9 +6,8 @@ public class Ex3Test {
 
     @Test
     public void test_phantichNT(){
-        Ex3 ex3 = new Ex3();
-        assertEquals(ex3.phantichNT(1), "");
-        assertEquals(ex3.phantichNT(600), "222355");
-        assertEquals(ex3.phantichNT(6), "23");
+        assertEquals(new Ex3().phantichNT(1), "");
+        assertEquals(new Ex3().phantichNT(600), "222355");
+        assertEquals(new Ex3().phantichNT(6), "23");
     }
 }
