@@ -12,28 +12,27 @@ public class Ex14 {
 
     public boolean checkArmstrong(int n) {
         int sum = 0;
-        int m = demSoChuSo(n);
+        int digits = demSoChuSo(n);
         int p = n;
-        int q = n;
 
-        for (int i = 1; i <= m; i++) {
+        for (int i = 1; i <= digits; i++) {
             int z = p % 10;
-            sum += Math.pow(z, m);
+            sum += Math.pow(z, digits);
             p /= 10;
         }
-        if (sum == q)
-            return true;
+        if (sum == n)
+            return sum == n;
         else
             return false;
     }
 
     public String listArmstrong() {
-        String result = "";
+        ArrayList result = new ArrayList<String>();
         for (int i = 10; i <= 99999; i++) {
             if (checkArmstrong(i)) {
-                result = String.join(",", result, String.valueOf(i));
+                result.add(String.valueOf(i));
             }
         }
-        return result.substring(1, result.length());
+        return String.join(", ", result);
     }
 }
