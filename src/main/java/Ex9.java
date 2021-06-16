@@ -7,10 +7,11 @@ public class Ex9 {
         int n = 1;
         while (e > E) {
             e = (double) 4 / ((2 * n) * (2 * n + 1) * (2 * n + 2));
-            if (n % 2 != 0)
+            if (n % 2 != 0) {
                 sum += e;
-            else
+            } else {
                 sum -= e;
+            }
             n++;
         }
         sum += 3;
