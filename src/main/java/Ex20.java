@@ -10,10 +10,9 @@ public class Ex20 {
 
     public boolean checkHanhphuc(int n) {
         while (n >= 10) {
-            int finalRs = tinh(n);
-            n = finalRs;
+            n = tinh(n);
         }
-        if (n == 1) return true;
+        if (n == 1) return (n == 1);
         return false;
     }
 }
