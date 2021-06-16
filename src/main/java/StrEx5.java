@@ -16,6 +16,6 @@ public class StrEx5 {
             }
         }
         if (cnt >= 2) result.add(word[word.length - 1]);
-        return String.join(", ", result);
+        return String.join(", ", result) ;
     }
 }
