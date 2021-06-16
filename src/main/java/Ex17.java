@@ -6,17 +6,17 @@ public class Ex17 {
     }
 
     double squareRoot(double n) {
-        if (n == 0) return 0;
-        if (n == 1) return 1;
-        double xL = 0;
-        double xR = n;
-        while (xR - xL > epsilon) {
-            double xM = (xL + xR) / 2;
-            if (func(xM, n) < 0)
-                xL = xM;
-            else
-                xR = xM;
+        if (n <= 1) return n;
+        double left = 0;
+        double right = n;
+        while (right - left > epsilon) {
+            double middle = (left + right) / 2;
+            if (func(middle, n) < 0) {
+                left = middle;
+            } else {
+                right = middle;
+            }
         }
-        return (xL + xR) / 2;
+        return (left + right) / 2;
     }
 }
