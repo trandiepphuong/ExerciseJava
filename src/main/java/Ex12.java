@@ -3,8 +3,9 @@ public class Ex12 {
 
     public double canbac2(int a) {
         double fn = a;
-        while (Math.abs(fn * fn - a) >= PRECISE)
+        while (Math.abs(fn * fn - a) >= PRECISE) {
             fn = a / (2 * fn) + fn / 2;
+        }
         return fn;
     }
 
