@@ -17,17 +17,13 @@ public class ArrEx6 {
                     start = i + 2 - length;
                     end = i + 2;
                 }
-            } else
+            } else {
                 length = 1;
+            }
         }
         for (int i = start; i < end; i++)
             result.add(String.valueOf(arr[i]));
-        return String.join(", ",result);
+        return String.join(", ", result);
     }
-
-//    public static void main(String[] args) {
-//        int[] a = new int[]{5, 4, 2, 10, 1, 2, 3, 4, 89, 15, 16, 17, 18};
-//        findMaxLenght(a);
-//    }
 }
 
