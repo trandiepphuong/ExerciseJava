@@ -22,8 +22,7 @@ public class Ex14 {
         }
         if (sum == n)
             return (sum == n);
-        else
-            return false;
+        return false;
     }
 
     public String listArmstrong() {
