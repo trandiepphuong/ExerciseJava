@@ -21,7 +21,7 @@ public class Ex14 {
             p /= 10;
         }
         if (sum == n)
-            return sum == n;
+            return (sum == n);
         else
             return false;
     }
