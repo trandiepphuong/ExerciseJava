@@ -2,12 +2,7 @@ import java.util.*;
 
 public class Ex14 {
     public int demSoChuSo(int n) {
-        int m = 0;
-        while (n > 0) {
-            n = n / 10;
-            m++;
-        }
-        return m;
+        return n < 10 ? 1 : 1 + demSoChuSo(n / 10);
     }
 
     public boolean checkArmstrong(int n) {
@@ -16,13 +11,10 @@ public class Ex14 {
         int p = n;
 
         for (int i = 1; i <= digits; i++) {
-            int z = p % 10;
-            sum += Math.pow(z, digits);
+            sum += Math.pow(p % 10, digits);
             p /= 10;
         }
-        if (sum == n)
-            return (sum == n);
-        return false;
+        return (sum == n);
     }
 
     public String listArmstrong() {
