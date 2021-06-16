@@ -6,9 +6,9 @@ public class Ex17Test {
 
     @Test
     public void test() {
-        assertEquals(new Ex17().squareRoot(4), 2, new Ex17().epsilon);
-        assertEquals(new Ex17().squareRoot(0), 0, new Ex17().epsilon);
-        assertEquals(new Ex17().squareRoot(1), 1, new Ex17().epsilon);
-        assertEquals(new Ex17().squareRoot(5), 2.236, new Ex17().epsilon);
+        assertEquals(new Ex17().squareRoot(4), 2, Ex17.epsilon);
+        assertEquals(new Ex17().squareRoot(0), 0, Ex17.epsilon);
+        assertEquals(new Ex17().squareRoot(1), 1, Ex17.epsilon);
+        assertEquals(new Ex17().squareRoot(5), 2.236, Ex17.epsilon);
     }
 }
