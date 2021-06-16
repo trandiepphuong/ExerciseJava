@@ -12,7 +12,6 @@ public class Ex20 {
         while (n >= 10) {
             n = tinh(n);
         }
-        if (n == 1) return (n == 1);
-        return false;
+        return (n == 1);
     }
 }
