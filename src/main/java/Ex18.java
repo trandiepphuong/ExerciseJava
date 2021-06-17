@@ -46,10 +46,11 @@ public class Ex18 {
         }
         int k = a[roman.length() - 1];
         for (int i = roman.length() - 1; i > 0; i--) {
-            if (a[i] > a[i - 1])
+            if (a[i] > a[i - 1]) {
                 k = k - a[i - 1];
-            else
+            } else {
                 k = k + a[i - 1];
+            }
         }
         return k;
     }
