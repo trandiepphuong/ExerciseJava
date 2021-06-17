@@ -9,7 +9,6 @@ public class StrEx9 {
                 sum += 3 * digit;
             }
         }
-        System.out.println(sum);
         int rounded = ((sum + 9) / 10 ) * 10;
         return rounded-sum;
     }
