@@ -5,7 +5,6 @@ import java.util.Set;
 
 public class StrEx6 {
     public String rutgon(String n) {
-        //String n = "abcccceeeeeefddd";
         n = n + " ";
         String newStr = "";
         int count = 1;
