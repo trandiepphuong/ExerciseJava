@@ -1,22 +1,28 @@
 public class StrEx7 {
     public String dich(String n) {
-        String newStr = "";
-        int lenghtNum = 0;
+        StringBuffer newStr = new StringBuffer();
+        int lengthNum = 0;
         int currentSum = 0;
         for (int i = 0; i < n.length(); i++) {
             char ch = n.charAt(i);
             if (!Character.isDigit(ch)) {
-                lenghtNum = 0;
-                newStr += ch;
+                lengthNum = 0;
                 currentSum = 0;
+                if (i == n.length() - 1 || (i != n.length() - 1) && !Character.isDigit(n.charAt(i + 1))) {
+                    System.out.println(n.charAt(i));
+                    newStr.append(n.charAt(i));
+                }
             } else {
-                lenghtNum++;
+                lengthNum++;
                 currentSum = 10 * currentSum + ch - '0';
-                for (int j = 1; j < currentSum; j++) {
-                    newStr += n.charAt(i - lenghtNum);
+                if ((i == n.length() - 1) || (i != n.length() - 1 && !Character.isDigit(n.charAt(i + 1)))) {
+                    System.out.println(n.charAt(i - lengthNum) + " repeat " + currentSum);
+                    for (int j = 0; j < currentSum; j++) {
+                        newStr.append(n.charAt(i - lengthNum));
+                    }
                 }
             }
         }
-        return newStr;
+        return newStr.toString();
     }
 }
