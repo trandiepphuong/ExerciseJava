@@ -11,8 +11,8 @@ public class ArrEx4 implements Comparator<Integer> {
     @Override
     public int compare(Integer left, Integer right) {
         if (left.equals(right)) return 0;
-        if (left % 2 == 0 && right % 2 == 0) return left - right;
-        if (left % 2 != 0 && right % 2 != 0) return right - left;
+        if (left % 2 + right % 2 == 0) return left - right;
+        if (left % 2 + right % 2 == 2) return right - left;
         return left % 2 - right % 2;
     }
 }
