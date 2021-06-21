@@ -12,10 +12,9 @@ public class StrEx6 {
             if (n.charAt(i) == n.charAt(i - 1)) {
                 count++;
             } else {
+                newStr += n.charAt(i - 1);
                 if (count != 1) {
-                    newStr += n.charAt(i - 1) + String.valueOf(count);
-                } else {
-                    newStr += n.charAt(i - 1);
+                    newStr += count;
                 }
                 count = 1;
             }

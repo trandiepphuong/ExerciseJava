@@ -6,7 +6,7 @@ public class StrEx6Test {
 
     @Test
     public void test_rutgon() {
-        assertEquals(new StrEx6().rutgon("abcccceeeeeefd"), "abc4e6fd");
-        assertEquals(new StrEx6().rutgon("abbbbbbbbbbbbbc"), "ab13c");
+        assertEquals(new StrEx6().rutgon("ab"+"c".repeat(4)+"e".repeat(6)+"fd"), "abc4e6fd");
+        assertEquals(new StrEx6().rutgon("a"+"b".repeat(13)+"c"), "ab13c");
     }
 }
