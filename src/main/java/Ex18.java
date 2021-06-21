@@ -9,40 +9,38 @@ public class Ex18 {
 //    Chữ số đi trước chữ số khác lớn hơn thì trừ bớt đi:
 //    IV = V – I = 5 – 1
 //    XL = L – X = 50 – 10 = 40
+    public int getDecimal(char temp) {
+        switch (temp) {
+            case ('I'): {
+                return 1;
+            }
+            case ('V'): {
+                return 5;
+            }
+            case ('X'): {
+                return 10;
+            }
+            case ('L'): {
+                return 50;
+            }
+            case ('C'): {
+                return 100;
+            }
+            case ('D'): {
+                return 500;
+            }
+            case ('M'): {
+                return 1000;
+            }
+        }
+        return 0;
+    }
+
     public int covertToDecimal(String roman) {
         int[] a = new int[roman.length()];
         for (int i = 0; i < roman.length(); i++) {
             char temp = roman.charAt(i);
-            switch (temp) {
-                case ('I'): {
-                    a[i] = 1;
-                    break;
-                }
-                case ('V'): {
-                    a[i] = 5;
-                    break;
-                }
-                case ('X'): {
-                    a[i] = 10;
-                    break;
-                }
-                case ('L'): {
-                    a[i] = 50;
-                    break;
-                }
-                case ('C'): {
-                    a[i] = 100;
-                    break;
-                }
-                case ('D'): {
-                    a[i] = 500;
-                    break;
-                }
-                case ('M'): {
-                    a[i] = 1000;
-                    break;
-                }
-            }
+            a[i] = getDecimal(temp);
         }
         int k = a[roman.length() - 1];
         for (int i = roman.length() - 1; i > 0; i--) {
