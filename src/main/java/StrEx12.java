@@ -1,21 +1,17 @@
 public class StrEx12 {
     public String max(int[] a) {
-        String temp;
-        String[] strArray = new String[a.length];
-        String result = "";
-        for (int i = 0; i < a.length; i++) {
-            strArray[i] = String.valueOf(a[i]);
-        }
-        for (int i = 0; i < strArray.length; i++)
-            for (int j = i + 1; j < strArray.length; j++)
-                if (Integer.parseInt(strArray[i] + strArray[j]) > Integer.parseInt(strArray[j] + strArray[i])) {
-                    temp = strArray[i];
-                    strArray[i] = strArray[j];
-                    strArray[j] = temp;
+        int temp;
+        for (int i = 0; i < a.length; i++)
+            for (int j = i + 1; j < a.length; j++)
+                if (Integer.parseInt(String.valueOf(a[i]) + String.valueOf(a[j])) < Integer.parseInt(String.valueOf(a[j]) + String.valueOf(a[i]))) {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
                 }
-        for (int i = strArray.length - 1; i >= 0; i--) {
-            result += strArray[i];
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < a.length; i++) {
+            result.append(a[i]);
         }
-        return result;
+        return result.toString();
     }
 }
