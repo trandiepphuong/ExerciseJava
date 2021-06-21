@@ -1,4 +1,8 @@
 public class StrEx9 {
+    int round(int n) {
+        return ((n + 9) / 10) * 10;
+    }
+
     public int verifyBarcode(String n) {
         int sum = 0;
         for (int i = 0; i < n.length(); i++) {
@@ -9,7 +13,6 @@ public class StrEx9 {
                 sum += 3 * digit;
             }
         }
-        int rounded = ((sum + 9) / 10 ) * 10;
-        return rounded-sum;
+        return round(sum) - sum;
     }
 }
