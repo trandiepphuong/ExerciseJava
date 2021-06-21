@@ -8,15 +8,13 @@ public class StrEx7 {
             if (!Character.isDigit(ch)) {
                 lengthNum = 0;
                 currentSum = 0;
-                if (i == n.length() - 1 || (i != n.length() - 1) && !Character.isDigit(n.charAt(i + 1))) {
-                    System.out.println(n.charAt(i));
+                if ((i == n.length() - 1) || !Character.isDigit(n.charAt(i + 1))) {
                     newStr.append(n.charAt(i));
                 }
             } else {
                 lengthNum++;
                 currentSum = 10 * currentSum + ch - '0';
-                if ((i == n.length() - 1) || (i != n.length() - 1 && !Character.isDigit(n.charAt(i + 1)))) {
-                    System.out.println(n.charAt(i - lengthNum) + " repeat " + currentSum);
+                if ((i == n.length() - 1) || !Character.isDigit(n.charAt(i + 1))) {
                     for (int j = 0; j < currentSum; j++) {
                         newStr.append(n.charAt(i - lengthNum));
                     }
