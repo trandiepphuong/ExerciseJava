@@ -1,44 +1,18 @@
 import java.util.Arrays;
+import java.util.Comparator;
 
-public class ArrEx4 {
-    public void sort(int[] arr, int n) {
-        boolean asc = false;
-        for (int i = 0; i < n - 1; i++) {
-            if (arr[i] % 2 == 0) asc = true;
-            for (int j = 0; j < n - i - 1; j++)
-                if ((arr[j] > arr[j + 1]) == asc) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-        }
+public class ArrEx4 implements Comparator<Integer> {
+
+    public String sortOddEven(Integer[] arr) {
+        Arrays.sort(arr, this);
+        return Arrays.toString(arr);
     }
 
-    public String sortOddEven(int[] a) {
-        int[] odd = new int[a.length];
-        int[] even = new int[a.length];
-        int elementOdd = 0;
-        int elementEven = 0;
-        for (int j : a) {
-            if (j % 2 == 0) {
-                even[elementEven] = j;
-                elementEven++;
-            } else {
-                odd[elementOdd] = j;
-                elementOdd++;
-            }
-        }
-
-        sort(even, elementEven);
-        sort(odd, elementOdd);
-        int[] newArr = new int[a.length];
-        for (int i = 0; i < elementEven; i++) {
-            newArr[i] = even[i];
-        }
-        for (int i = 0; i < elementOdd; i++) {
-            newArr[i + elementEven] = odd[i];
-        }
-        return Arrays.toString(newArr);
+    @Override
+    public int compare(Integer left, Integer right) {
+        if (left.equals(right)) return 0;
+        if (left % 2 == 0 && right % 2 == 0) return left - right;
+        if (left % 2 != 0 && right % 2 != 0) return right - left;
+        return left % 2 - right % 2;
     }
-
 }
