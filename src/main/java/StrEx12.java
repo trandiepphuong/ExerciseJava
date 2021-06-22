@@ -3,7 +3,7 @@ public class StrEx12 {
         int temp;
         for (int i = 0; i < a.length; i++)
             for (int j = i + 1; j < a.length; j++)
-                if (Integer.parseInt(String.valueOf(a[i]) + String.valueOf(a[j])) < Integer.parseInt(String.valueOf(a[j]) + String.valueOf(a[i]))) {
+                if (Integer.parseInt(a[i] + "" + a[j]) < Integer.parseInt(a[j] + "" + a[i])) {
                     temp = a[i];
                     a[i] = a[j];
                     a[j] = temp;
