@@ -2,7 +2,7 @@ public class StrEx8 {
     public boolean checkBarcode(String n) {
         int sum = 0;
         for (int i = 0; i < n.length(); i++) {
-            int digit = Integer.parseInt(String.valueOf(n.charAt(i)));
+            int digit = n.charAt(i) - '0';
             if ((i + 1) % 2 != 0) {
                 sum += digit;
             } else {
