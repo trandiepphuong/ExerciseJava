@@ -27,10 +27,4 @@ public class ArrEx10 {
         return Arrays.toString(newArr);
     }
 
-//    public static void main(String args[]) {
-//        int[] a = new int[]{1, 2, 4, 5};
-//        //a = addElement(a,3,6);
-//        a = insert(a, 6);
-//        System.out.println(Arrays.toString(a));
-//    }
 }
