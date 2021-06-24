@@ -1,5 +1,8 @@
 package OopExercise;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
     private int id;
     private String firstName;
@@ -8,16 +11,13 @@ public class Student {
     private String className;
     private String address;
 
-    public Student(Class<String> stringClass) {
-    }
-
-    public Student(int id, String firstName, String lastName, String birthday, String className, String address) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthday = birthday;
-        this.className = className;
-        this.address = address;
+    public Student(StudentBuilder studentBuilder) {
+        this.id = studentBuilder.getId();
+        this.firstName = studentBuilder.getFirstName();
+        this.lastName = studentBuilder.getLastName();
+        this.birthday = studentBuilder.getBirthday();
+        this.className = studentBuilder.getClassName();
+        this.address = studentBuilder.getAddress();
     }
 
 
@@ -25,50 +25,22 @@ public class Student {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
 
     public String getClassName() {
         return className;
     }
 
-    public void setClassName(String className) {
-        this.className = className;
+
+    @Override
+    public String toString() {
+        return firstName;
     }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-
 }
+
+
+
 
