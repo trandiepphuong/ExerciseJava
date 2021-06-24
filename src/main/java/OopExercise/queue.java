@@ -10,10 +10,6 @@ public class queue {
     private int maxSize;
     private int size = 0;
 
-    //default len 11
-    public queue() {
-        this(11);
-    }
 
     public queue(int len) {
         maxSize = len;
@@ -46,7 +42,7 @@ public class queue {
         }
         size++;
         queue[size - 1] = o;
-        return queue[size - 1] == o;
+        return true;
     }
 
     //peek() - Trả ve đầu của hàng đợi. Trả ve null nếu hàng đợi trống.
