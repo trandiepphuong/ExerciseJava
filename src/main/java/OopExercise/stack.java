@@ -1,6 +1,7 @@
 package OopExercise;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class stack {
@@ -29,10 +30,8 @@ public class stack {
     //them phan tu vao dinh, nghia là sau các phan tử đã có trong ngan xếp
     public void push(Object o) {
         size++;
-        if (size == stack.length) {
-            Object[] newStack = new Object[size];
-            System.arraycopy(stack, 0, newStack, 0, size);
-            stack = newStack;
+        if (size >= stack.length) {
+            stack = Arrays.copyOf(stack, size);
         }
         stack[size - 1] = o;
     }

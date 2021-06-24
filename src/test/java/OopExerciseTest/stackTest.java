@@ -16,13 +16,14 @@ public class stackTest {
         s.push(8);
         s.push(9);
         s.push(10);
-        assertEquals(s.toString(), "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]");
-        assertEquals(s.peek(), 10);
-        assertEquals(s.size(), 10);
-        assertEquals(s.search(10), 1);
-        assertEquals(s.search(1), 10);
+        s.push(11);
+        assertEquals(s.toString(), "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]");
+        assertEquals(s.peek(), 11);
+        assertEquals(s.size(), 11);
+        assertEquals(s.search(11), 1);
+        assertEquals(s.search(1), 11);
         assertEquals(s.search(0), -1);
-        assertEquals(s.pop(), 10);
-        assertEquals(s.toString(), "[1, 2, 3, 4, 5, 6, 7, 8, 9]");
+        assertEquals(s.pop(), 11);
+        assertEquals(s.toString(), "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]");
     }
 }
