@@ -69,12 +69,12 @@ public class StudentTest {
 
     @Test
     void test_saveToFile() throws IOException {
-        studentController.saveToFile("src/main/java/OopExercise/temp_json.json");
+        studentController.saveToFile("src/main/java/OopExercise/students.json");
     }
 
     @Test
     void test_loadFromFile() throws IOException {
-        studentController.loadFromFile("src/main/java/OopExercise/temp_json.json");
+        studentController.loadFromFile("src/main/java/OopExercise/students.json");
 
     }
 
