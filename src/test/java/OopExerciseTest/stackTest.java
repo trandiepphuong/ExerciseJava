@@ -1,11 +1,17 @@
 package OopExerciseTest;
-import OopExercise.stack;
+
+import OopExercise.Stack;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class stackTest {
-    @Test
-    public void test_stack() {
-        stack s = new stack();
+    static Stack s = new Stack();
+    @BeforeAll
+    static void init() {
         s.push(1);
         s.push(2);
         s.push(3);
@@ -17,13 +23,20 @@ public class stackTest {
         s.push(9);
         s.push(10);
         s.push(11);
-        assertEquals(s.toString(), "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]");
+    }
+
+    @Test
+    public void test_peek() {
         assertEquals(s.peek(), 11);
+    }
+
+    @Test
+    public void test_size() {
         assertEquals(s.size(), 11);
-        assertEquals(s.search(11), 1);
-        assertEquals(s.search(1), 11);
-        assertEquals(s.search(0), -1);
+    }
+
+    @Test
+    public void test_pop() {
         assertEquals(s.pop(), 11);
-        assertEquals(s.toString(), "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]");
     }
 }
