@@ -17,7 +17,7 @@ public class ArrEx10 {
                 break;
             }
         }
-        if (isMid==false){
+        if (isMid == false) {
             newArr = Arrays.copyOf(arr, arr.length + 1);
             newArr[arr.length] = x;
         }
