@@ -8,22 +8,15 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class StudentController {
     private List<Student> students = new ArrayList<>();
 
     public static final Gson gson = new Gson();
 
-    public StudentController() {
-    }
-
-
     public void addStudent(Student student) {
-        getStudents().add(student);
-    }
-
-    public List<Student> getStudents() {
-        return students;
+        students.add(student);
     }
 
     public void setStudents(List<Student> students) {
@@ -31,34 +24,25 @@ public class StudentController {
     }
 
     public void deleteStudent(Student student) {
-        getStudents().remove(student);
+        students.remove(student);
     }
 
     public void saveToFile(String path) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        FileWriter f = new FileWriter(new File(path));
-        f.write(gson.toJson(getStudents()));
-        f.flush();
+        FileWriter fileWriter  = new FileWriter(path);
+        fileWriter .write(gson.toJson(students));
+        fileWriter .flush();
     }
 
-    public List<Student> loadFromFile(String path) throws IOException {
-        StringBuilder jsonStr = new StringBuilder();
-        FileReader f = new FileReader(new File(path));
-        BufferedReader reader = new BufferedReader(f);
-        String line = reader.readLine();
-        while (line != null) {
-            jsonStr.append(line);
-            line = reader.readLine();
-        }
-
+    public void loadFromFile(String path) throws IOException {
+        String jsonStr = new Scanner(new FileReader(new File(path))).useDelimiter("\\Z").next();
         Type listOfMyClassObject = new TypeToken<ArrayList<Student>>() {
         }.getType();
-        List<Student> outputList = gson.fromJson(jsonStr.toString(), listOfMyClassObject);
-        return outputList;
+        students = gson.fromJson(jsonStr, listOfMyClassObject);
     }
 
     public Student getById(int id) {
-        for (Student student : getStudents()) {
+        for (Student student : students) {
             if (student.getId() == id) {
                 return student;
             }
@@ -67,7 +51,7 @@ public class StudentController {
     }
 
     public Student findByName(String name) {
-        for (Student student : getStudents()) {
+        for (Student student : students) {
             if (student.getFirstName().equals(name)) {
                 return student;
             }
@@ -76,7 +60,7 @@ public class StudentController {
     }
 
     public Student findByClassName(String className) {
-        for (Student student : getStudents()) {
+        for (Student student : students) {
             if (student.getClassName().equals(className)) {
                 return student;
             }

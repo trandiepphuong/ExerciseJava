@@ -26,3 +26,5 @@ build/**
 .gradle/**
 .idea/**
 out/**
+
+src/main/java/OopExercise/temp_json.json

@@ -33,12 +33,6 @@ public class Student {
     public String getClassName() {
         return className;
     }
-
-
-    @Override
-    public String toString() {
-        return firstName;
-    }
 }
 
 
