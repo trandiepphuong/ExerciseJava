@@ -8,6 +8,5 @@ public class StrEx10Test {
         assertEquals(new StrEx10().sum("12","20000"), "20012");
         assertEquals(new StrEx10().sum("10000","1"), "10001");
         assertEquals(new StrEx10().sum("999","999"), "1998");
-
     }
 }

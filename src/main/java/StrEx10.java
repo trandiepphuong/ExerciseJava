@@ -8,8 +8,7 @@ public class StrEx10 {
     }
 
     public String sum(String s1, String s2) {
-        String s = "";
-
+        StringBuffer s = new StringBuffer();
         int len1 = s1.length();
         int len2 = s2.length();
         int max = Math.max(len1, len2);
@@ -27,22 +26,16 @@ public class StrEx10 {
                 s2 += "0";
             }
         }
-
-//        System.out.println(s1);
-//        System.out.println(s2);
         //thuc hien phep cong
         int nho = 0;
         for (int i = 0; i < max; i++) {
-            int tong;
-            tong = s1.charAt(i) - '0' + s2.charAt(i) - '0' + nho;
-            s += tong % 10;
+            int tong = s1.charAt(i) + s2.charAt(i) - 2 * '0' + nho;
+            s.append(tong % 10);
             nho = tong / 10;
         }
         if (nho == 1) {
-            s += 1;
+            s.append(1);
         }
-        //thuc hien dao xau truoc khi xuat
-        s = daoXau(s);
-        return s;
+        return daoXau(s.toString());
     }
 }
