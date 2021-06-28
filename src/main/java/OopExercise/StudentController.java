@@ -13,6 +13,10 @@ import java.util.Scanner;
 public class StudentController {
     private List<Student> students = new ArrayList<>();
 
+    public List<Student> getStudents() {
+        return students;
+    }
+
     public static final Gson gson = new Gson();
 
     public void addStudent(Student student) {
@@ -29,9 +33,9 @@ public class StudentController {
 
     public void saveToFile(String path) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        FileWriter fileWriter  = new FileWriter(path);
-        fileWriter .write(gson.toJson(students));
-        fileWriter .flush();
+        FileWriter fileWriter = new FileWriter(path);
+        fileWriter.write(gson.toJson(students));
+        fileWriter.flush();
     }
 
     public void loadFromFile(String path) throws IOException {

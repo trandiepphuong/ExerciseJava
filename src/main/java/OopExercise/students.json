@@ -9,18 +9,10 @@
   },
   {
     "id": 2,
-    "firstName": "Triet",
-    "lastName": "Tran",
-    "birthday": "15/03/2000",
-    "className": "IT2",
-    "address": "Tam Ky"
-  },
-  {
-    "id": 3,
-    "firstName": "Linh",
-    "lastName": "Nguyen",
-    "birthday": "15/03/2000",
-    "className": "IT3",
-    "address": "Phu Yen"
+    "firstName": "Ronaldo",
+    "lastName": "Cristiano",
+    "birthday": "05/02/1985",
+    "className": "Juventus",
+    "address": "Portugal"
   }
 ]
