@@ -1,10 +1,9 @@
 package OopExerciseTest;
 
-import OopExercise.queue;
+import OopExercise.Queue;
 import org.junit.jupiter.api.Test;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -12,28 +11,19 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class queueTest {
     @Test
     public void test_queue() throws Exception {
-        queue q = new queue(3);
-        assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-            q.element();
+        Queue q = new Queue();
+        assertThrows(RuntimeException.class, () -> {
+            q.peek();
         });
-        assertEquals(q.peek(),null);
-        assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-            q.remove();
+        assertThrows(RuntimeException.class, () -> {
+            q.dequeue();
         });
-        assertEquals(q.poll(),null);
-        q.offer(1);
-        q.add(2);
-        q.add(3);
-        assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-            q.add(4);
-        });
-        assertEquals(q.offer(4),false);
-        assertEquals(q.toString(),"[1, 2, 3]");
-        assertEquals(q.element(),1);
-        assertEquals(q.peek(), 1);
-        assertEquals(q.remove(),1);
-        assertEquals(q.toString(),"[2, 3]");
-        assertEquals(q.poll(),2);
-        assertEquals(q.toString(),"[3]");
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        assertEquals(Arrays.toString(q.getQueue().toArray()),"[1, 2, 3]");
+        assertEquals(q.peek(),1);
+        assertEquals(q.dequeue(),1);
+        assertEquals(Arrays.toString(q.getQueue().toArray()),"[2, 3]");
     }
 }
