@@ -2,23 +2,19 @@ import java.util.Arrays;
 
 public class ArrEx10 {
     public String insert(int arr[], int x) {
-        boolean isMid = false;
+        boolean inserted = false;
+        int pos = 0;
         int[] newArr = new int[arr.length + 1];
         for (int i = 0; i < arr.length; i++) {
-            if (x < arr[i] && x > arr[i - 1]) {
-                for (int j = 0; j < i; j++) {
-                    newArr[j] = arr[j];
-                }
-                newArr[i] = x;
-                for (int j = i + 1; j < newArr.length; j++) {
-                    newArr[j] = arr[j - 1];
-                }
-                isMid = true;
-                break;
+            if (arr[i] >= x && !inserted) {
+                newArr[pos] = x;
+                pos++;
+                inserted = true;
             }
+            newArr[pos] = arr[i];
+            pos++;
         }
-        if (isMid == false) {
-            newArr = Arrays.copyOf(arr, arr.length + 1);
+        if (!inserted) { //neu chua chen thi so do la so lon nhat
             newArr[arr.length] = x;
         }
         return Arrays.toString(newArr);
