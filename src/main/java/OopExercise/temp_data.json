@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "firstName": "Phuong",
+    "lastName": "Tran",
+    "birthday": "15/03/2000",
+    "className": "IT",
+    "address": "Da Nang"
+  },
+  {
+    "id": 2,
+    "firstName": "Ronaldo",
+    "lastName": "Cristiano",
+    "birthday": "05/02/1985",
+    "className": "Juventus",
+    "address": "Portugal"
+  }
+]
