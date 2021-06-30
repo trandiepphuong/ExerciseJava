@@ -19,8 +19,7 @@ public class Student {
         this.className = studentBuilder.getClassName();
         this.address = studentBuilder.getAddress();
     }
-
-
+    
     public int getId() {
         return id;
     }
@@ -28,7 +27,6 @@ public class Student {
     public String getFirstName() {
         return firstName;
     }
-
 
     public String getClassName() {
         return className;

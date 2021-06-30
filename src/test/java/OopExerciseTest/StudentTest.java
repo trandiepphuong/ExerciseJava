@@ -66,25 +66,25 @@ public class StudentTest {
         studentController.saveToFile("src/main/java/OopExercise/students.json");
         List<Student> beforeLoad = studentController.getStudents();
         studentController.loadFromFile("src/main/java/OopExercise/students.json");
-        assertTrue(beforeLoad.size()==studentController.getStudents().size());
+        assertEquals(beforeLoad.size(),studentController.getStudents().size());
     }
 
     @Test
     void test_getById() {
         assertEquals(studentController.getById(1).getFirstName(), s1.getFirstName());
-        assertEquals(studentController.getById(10), null);
+        assertNull(studentController.getById(10));
     }
 
     @Test
     void test_findByName() {
         assertEquals(studentController.findByName("Phuong").getFirstName(), s1.getFirstName());
-        assertEquals(studentController.findByName("Messi"), null);
+        assertNull(studentController.findByName("Messi"));
     }
 
     @Test
     void test_findByClassName() {
         assertEquals(studentController.findByClassName("IT").getFirstName(), s1.getFirstName());
-        assertEquals(studentController.findByClassName("IT4"), null);
+        assertNull(studentController.findByClassName("IT4"));
     }
 
     @Test
